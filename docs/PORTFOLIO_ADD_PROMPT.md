@@ -32,6 +32,7 @@
 - 想定利用者: EC運営、Web制作、ブログ・編集、SNS運用
 - プライバシー: 画像処理はブラウザ内で実行してサーバーへ送信しない。EXIF / XMP / IPTC / 位置情報（GPS）/ 色プロファイルは常に削除する。Canvas再エンコード後に元の色プロファイルを安全に保持できると保証できないため、保持／削除の選択式にはしない
 - 技術: Next.js 16.3、React 19、TypeScript、Canvas / ImageBitmap / OffscreenCanvas、Web Worker、AbortSignal、ブラウザ内ZIP、localStorage、Vitest
+- GitHub URL: `https://github.com/shunsoco-stack/image-batch-resizer-compressor`
 
 ## 確認済み成果
 

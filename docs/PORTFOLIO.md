@@ -6,6 +6,7 @@
 - カテゴリ: 業務効率化ツール
 - サブカテゴリ: 画像処理・一括変換
 - 一言説明: 大量画像の加工工程をWorkflow化し、ブラウザ内で一括実行・比較・ZIP出力できるローカルファーストツール
+- GitHub URL: <https://github.com/shunsoco-stack/image-batch-resizer-compressor>
 
 ## 課題
 

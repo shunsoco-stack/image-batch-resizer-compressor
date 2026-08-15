@@ -7,6 +7,8 @@ EC運営、Web制作、ブログ、SNS運用で繰り返す画像加工を、Gal
 
 複数画像をドラッグ＆ドロップし、リサイズ、圧縮、形式変換、クロップ、背景合成、リネーム、メタデータ処理を順番に組み立て、結果を比較してZIPで一括ダウンロードできます。可能な処理はブラウザ内で完結し、画像をサーバーへ送信しません。
 
+GitHub: <https://github.com/shunsoco-stack/image-batch-resizer-compressor>
+
 ## 主な体験
 
 - JPEG / PNG / WebPと、実行ブラウザがデコード可能なAVIFを複数投入
