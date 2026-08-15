@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title description">
+  <title id="title">画像一括リサイズ・圧縮ツール</title>
+  <desc id="description">画像、対角リサイズ矢印、中央へ向かう圧縮矢印を組み合わせたアイコン</desc>
+  <defs>
+    <linearGradient id="background" x1="12" y1="8" x2="116" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1B2333"/>
+      <stop offset="1" stop-color="#090B10"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="32" y1="74" x2="76" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34C8FF"/>
+      <stop offset="1" stop-color="#7D7AFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#background)"/>
+  <rect x="16" y="22" width="61" height="62" rx="11" fill="#FFFFFF" fill-opacity=".08" stroke="#FFFFFF" stroke-opacity=".92" stroke-width="4"/>
+  <circle cx="31" cy="38" r="5" fill="#FFD66B"/>
+  <path d="M23 73 39.5 54 50 65 58.5 56 70 73H23Z" fill="#FFFFFF" fill-opacity=".72"/>
+  <path d="M36 66 68 34M36 66V53M36 66H49M68 34V47M68 34H55" fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M99 39V89" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/>
+  <path d="M82 52H94M90 47 95 52 90 57M116 52H104M108 47 103 52 108 57M82 76H94M90 71 95 76 90 81M116 76H104M108 71 103 76 108 81" fill="none" stroke="#62E6C3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
