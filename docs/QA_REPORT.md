@@ -1,12 +1,14 @@
 # QA Report
 
-> 最終更新: 2026-08-13
-> 対象: production static export（`out/`）
+> 最終更新: 2026-08-15
+> 対象: production static export（`out/`）とFirebase Hosting公開版
+> 公開URL: <https://image-batch-resizer-kj.web.app/>
 > 判定基準: 「実ブラウザ」は完成版を操作、「自動」はVitest / jsdom /純粋ロジック、「実装確認」はコードとUIの契約確認、「未実施」は今後の実機・負荷検証です。
 
 ## 結論
 
 - ポートフォリオ掲載用デモとして **合格**。Critical / Highの既知不具合はありません。
+- Firebase Hostingの専用siteへ外部公開し、公開URLからHTTP 200、静的asset 10件、CSP、Worker、ZIP生成を確認しました。
 - Demo 10枚を実ブラウザで完走し、**36.2 MB → 172 KB、99.5%削減**を確認しました。この値は同梱Demoデータと検証ブラウザでの実測であり、任意画像の保証値ではありません。
 - キャンセル直後の再実行、16:9 Cover Crop、Before / After、Zoom、Template保存、ZIP Blob生成、390 × 844px表示を実操作で確認しました。
 - クロスブラウザ実機マトリクス、100枚Soak、OS保存先まで含むDownloadイベントは掲載後の追加検証項目です。
@@ -20,6 +22,7 @@
 | Unit / Integration | `npm run test` | 合格 | 12 files / 85 tests |
 | Static export | `npm run build` | 合格 | Next.js 16.3、`out/`生成、`/`・`/_not-found`・icon・manifestを出力 |
 | 一括検証 | `npm run verify` | 合格 | lint → typecheck → test → buildを連続実行 |
+| Firebase Hosting | `firebase deploy --only hosting` | 合格 | 専用site `image-batch-resizer-kj`へ34 filesを公開 |
 
 ## 実ブラウザ受入結果
 
@@ -36,6 +39,9 @@
 | ZIP | `ec-product-images.zip`のBlob URLとdownload属性を確認。ZIPバイナリ構造・CRC・Unicode名は自動テストで検証 |
 | Mobile | 390 × 844pxで2列Gallery、Workflow sheet、下部CTAを確認。横スクロールなし |
 | Console | production画面でwarning / errorなし |
+| 公開URL | `https://image-batch-resizer-kj.web.app/`から同じDemoを10 / 10完走 |
+| HTTP / Assets | HTML 200、HTMLから参照する`/_next/` asset 10件がすべて200 |
+| Security headers | CSP、`X-Frame-Options: DENY`、Permissions-Policy、Referrer-Policyを確認 |
 
 ## 機能テスト
 
@@ -102,14 +108,14 @@
 
 | 環境 | 状態 | JPEG / PNG / WebP | AVIF decode | AVIF encode | 備考 |
 | --- | --- | --- | --- | --- | --- |
-| Codex in-app Browser / Windows | 合格 | 利用可 | 利用可表示 | 利用可表示 | production static export。正確なengine版は取得不可 |
+| Codex in-app Browser / Windows | 合格 | 利用可 | 利用可表示 | 利用可表示 | Firebase Hosting公開URL。正確なengine版は取得不可 |
 | Edge / Windows | 未実施 | — | — | — | ブラウザ固有差を追加確認する |
 | Safari / iOS | 未実施 | — | — | — | AVIF / Worker / Download挙動を追加確認する |
 | Safari / macOS | 未実施 | — | — | — | AVIF / Worker / Download挙動を追加確認する |
 
 ## 公開判定
 
-- 判定: **ポートフォリオ掲載用デモとして合格**
+- 判定: **外部公開済み・ポートフォリオ掲載用デモとして合格**
 - 既知のCritical / High: なし
 - 掲載時の注意: 実測圧縮率はDemo環境の結果として明記し、任意画像や全ブラウザの保証値にしない。AVIFは必ず「実行環境により異なる」と説明する。
 - 追加推奨: Edge / Safari実機、100枚Soak、alpha PNG → JPEGの画素比較、全形式変換マトリクス、200% Zoom、OS download完了の確認

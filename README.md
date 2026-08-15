@@ -9,6 +9,8 @@ EC運営、Web制作、ブログ、SNS運用で繰り返す画像加工を、Gal
 
 GitHub: <https://github.com/shunsoco-stack/image-batch-resizer-compressor>
 
+公開URL: <https://image-batch-resizer-kj.web.app/>
+
 ## 主な体験
 
 - JPEG / PNG / WebPと、実行ブラウザがデコード可能なAVIFを複数投入
@@ -134,9 +136,20 @@ npm run build
 
 Next.jsのstatic exportを実行し、公開対象の成果物を`out/`へ生成します。環境変数、外部API、Databaseは必要ありません。
 
+## Deploy
+
+Firebase Hostingの専用site `image-batch-resizer-kj`へ公開しています。設定は`firebase.json`と`.firebaserc`に固定し、同じFirebase Project内の他作品を上書きしない構成です。
+
+```bash
+npm run verify
+npx firebase-tools deploy --only hosting --project kj-web-app-portfolio
+```
+
+公開URL: <https://image-batch-resizer-kj.web.app/>
+
 ## 完成版の検証結果
 
-production static exportを実ブラウザで操作し、同梱Demo 10枚を`36.2 MB → 172 KB`（99.5%削減）へ変換してZIPダウンロード導線まで完走しました。16:9 Cover Crop、Batch中盤のキャンセルと直後の再実行、Before / After、Zoom、Template保存、390 × 844px表示も確認済みです。自動検証は12 files / 85 testsです。
+production static exportとFirebase Hostingの公開URLを実ブラウザで操作し、同梱Demo 10枚を`36.2 MB → 172 KB`（99.5%削減）へ変換してZIPダウンロード導線まで完走しました。16:9 Cover Crop、Batch中盤のキャンセルと直後の再実行、Before / After、Zoom、Template保存、390 × 844px表示も確認済みです。自動検証は12 files / 85 testsです。
 
 この圧縮値はDemoデータと検証ブラウザでの実測であり、任意画像の削減率を保証するものではありません。クロスブラウザ、負荷試験を含む検証範囲と未実施項目は[`docs/QA_REPORT.md`](docs/QA_REPORT.md)に分離して記録しています。
 
@@ -160,7 +173,7 @@ production static exportを実ブラウザで操作し、同梱Demo 10枚を`36.
 - Canvas再エンコードによりMetadataと色プロファイルを削除するため、厳密な印刷色管理やMetadata保持が必要な用途には適しません。
 - 大容量・高解像度・大量画像の処理上限は端末メモリとブラウザに依存します。
 - クラウド保存、端末間Workflow同期、共同編集、サーバー処理、オフライン配布は対象外です。
-- 現時点で公開URLはなく、local buildとstatic exportを検証済みです。
+- 独自ドメインは未設定で、Firebase Hostingの標準`.web.app` URLを使用しています。
 
 ## ライセンス
 

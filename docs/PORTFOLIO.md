@@ -6,6 +6,7 @@
 - カテゴリ: 業務効率化ツール
 - サブカテゴリ: 画像処理・一括変換
 - 一言説明: 大量画像の加工工程をWorkflow化し、ブラウザ内で一括実行・比較・ZIP出力できるローカルファーストツール
+- 公開URL: <https://image-batch-resizer-kj.web.app/>
 - GitHub URL: <https://github.com/shunsoco-stack/image-batch-resizer-compressor>
 
 ## 課題
@@ -85,7 +86,8 @@ Galleryで原本を把握しながら、Resize、Crop、Format、Compress、Meta
 
 ## 検証と制約
 
-- production static exportを実ブラウザで操作し、Demo 10枚、Crop、キャンセル直後の再実行、Before / After、Template、ZIPダウンロード導線、Mobileを確認済み
+- Firebase Hosting公開URLを実ブラウザで操作し、Demo 10枚、Crop、キャンセル直後の再実行、Before / After、Template、ZIPダウンロード導線、Mobileを確認済み
+- 公開URLでHTTP 200、参照asset 10件、CSPと各種security header、console errorなしを確認済み
 - 7枚の掲載用スクリーンショットは実画面から取得済み
 - AVIFは検証ブラウザでは利用可表示。全ブラウザ共通の対応とは表現しない
 - EXIF等の除去はfixtureの出力バイナリで検証

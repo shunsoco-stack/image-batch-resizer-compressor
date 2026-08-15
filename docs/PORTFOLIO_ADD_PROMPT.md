@@ -1,6 +1,6 @@
 # 既存ポートフォリオ追加用プロンプト（完成版）
 
-> 2026-08-13、production static exportの完成版を実操作し、Demo 10枚の完走、Crop、キャンセル直後の再実行、Before / After、Template保存、ZIPダウンロード導線、Mobile表示を確認したうえで確定したプロンプトです。
+> 2026-08-15、Firebase Hosting公開版を実操作し、Demo 10枚の完走、Crop、キャンセル直後の再実行、Before / After、Template保存、ZIPダウンロード導線、Mobile表示を確認したうえで確定したプロンプトです。
 
 以下を、既存ポートフォリオを編集するCodexへの依頼文としてそのまま使用できます。
 
@@ -32,6 +32,7 @@
 - 想定利用者: EC運営、Web制作、ブログ・編集、SNS運用
 - プライバシー: 画像処理はブラウザ内で実行してサーバーへ送信しない。EXIF / XMP / IPTC / 位置情報（GPS）/ 色プロファイルは常に削除する。Canvas再エンコード後に元の色プロファイルを安全に保持できると保証できないため、保持／削除の選択式にはしない
 - 技術: Next.js 16.3、React 19、TypeScript、Canvas / ImageBitmap / OffscreenCanvas、Web Worker、AbortSignal、ブラウザ内ZIP、localStorage、Vitest
+- 公開URL: `https://image-batch-resizer-kj.web.app/`
 - GitHub URL: `https://github.com/shunsoco-stack/image-batch-resizer-compressor`
 
 ## 確認済み成果
@@ -76,7 +77,7 @@ altは`docs/screenshots/README.md`の確定文を使用してください。SVG�
 2. AVIF対応を全ブラウザ共通と断定せず、「実行環境のdecode / encode能力を起動時に検出」と書く。
 3. SNS等のPreset寸法を恒久仕様として断定せず、用途別の編集可能な目標値として扱う。
 4. Metadataを「保持できる」と書かない。EXIF / XMP / IPTC / 位置情報（GPS）/ 色プロファイルを常時削除するprivacy-first仕様と説明する。保持も検討したが、Canvas再エンコード後の安全な保持を保証できないため削除のみを採用した理由も明記する。
-5. 公開URL、GitHub URL、利用者数、処理速度は確認できる値がないため、推測やダミーURLを追加しない。
+5. 公開URLとGitHub URLは上記の確認済みURLを使用する。利用者数や処理速度は確認できる値がないため、推測しない。
 6. 圧縮率は「Demo実測」と併記し、一般的な効果保証に見せない。
 7. Local-first、キャンセル、端末負荷に応じた並列数、Object URL等の解放を技術的な工夫として簡潔に見せる。
 
@@ -101,4 +102,5 @@ altは`docs/screenshots/README.md`の確定文を使用してください。SVG�
 - [x] スクリーンショット7種を撮影・PNG実体確認
 - [x] 掲載文の機能・数値を完成版と照合
 - [x] 専用SVG、作品分類、metadata方針を照合
+- [x] Firebase Hosting公開URLでDemo 10枚とZIP生成を再確認
 - [x] 既存ポートフォリオの場所を推測せず、受け側で構造調査する指示にした

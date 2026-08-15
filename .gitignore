@@ -12,6 +12,7 @@
 # Tests
 /coverage/
 /.vercel/
+/.firebase/
 /.turbo/
 /.eslintcache
 
