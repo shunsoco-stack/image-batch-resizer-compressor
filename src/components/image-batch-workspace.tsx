@@ -692,7 +692,7 @@ export function ImageBatchWorkspace() {
             </div>
           </div>
           <div className="header-actions">
-            <span className="privacy-pill" title="画像データをサーバーへ送信しません">
+            <span className="privacy-pill" title="画像データを外部サーバーへ送信しません。本番ページ末尾の広告配信（忍者AdMax）は、画像データとは無関係です">
               <span className="privacy-dot" />
               <span className="privacy-label">端末内で処理</span>
             </span>
@@ -918,7 +918,7 @@ function EmptyDropZone({
             <span key={format} className="capability-pill">{format.toUpperCase()} {capabilities[format].decode ? "✓" : format === "avif" ? "要確認" : "—"}</span>
           ))}
         </div>
-        <div className="local-note"><Icon name="lock" /> 画像はサーバーへ送信せず、可能な処理をこのブラウザ内で実行します。</div>
+        <div className="local-note"><Icon name="lock" /> 画像は外部サーバーへ送信せず、可能な処理をこのブラウザ内で実行します。本番ページ末尾の広告配信（忍者AdMax）は、画像データとは無関係です。</div>
       </div>
     </div>
   );

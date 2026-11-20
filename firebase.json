@@ -51,7 +51,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; font-src 'self' data:; connect-src 'self' blob: https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; worker-src 'self' blob:; frame-src https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
           }
         ]
       },
@@ -80,7 +80,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
+            "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; font-src 'self' data:; connect-src 'self' blob: https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; worker-src 'self' blob:; frame-src https://adm.shinobi.jp https://*.shinobi.jp https://*.cnobi.jp; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'"
           }
         ]
       }

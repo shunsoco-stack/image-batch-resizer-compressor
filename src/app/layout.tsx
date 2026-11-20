@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import { LegalFooter } from "@/components/legal-footer";
 
 export const metadata: Metadata = {
   title: {
@@ -48,6 +49,7 @@ export default function RootLayout({
           メインコンテンツへ移動
         </a>
         {children}
+        <LegalFooter />
       </body>
     </html>
   );
